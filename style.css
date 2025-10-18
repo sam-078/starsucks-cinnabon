@@ -1,0 +1,725 @@
+body{
+    background-color: rgb(255, 255, 255); height: 125vh;
+    padding: 5px;
+}
+#frapbody::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('https://starbucksstatic.cognizantorderserv.com/Items/Large/webP/100501.webp');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: -1; 
+}
+#sandbody::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('https://starbucksstatic.cognizantorderserv.com/Items/Large/webP/104108.webp');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: -1; 
+}
+#esprbody::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('https://starbucksstatic.cognizantorderserv.com/Items/Large/webP/100433.webp');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: -1; 
+}
+#dessbody::before{
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url('https://starbucksstatic.cognizantorderserv.com/Items/Large/webP/114551_1.webp');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: -1; 
+}
+/* Headers styling */
+.headers{   
+    border-radius: 10px;
+    text-align: center;
+    /* background-color: #3d3c3a; */
+    background-color: #0582CA;
+    line-height: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    /* color: aliceblue; */
+    color: aliceblue;
+}
+/* Home page styling */
+#inh{
+    background-color:#3c3a3d;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: rgb(228, 225, 225);
+    opacity: 1;
+    width:auto;
+    border-radius: 7px;
+}        
+#inp{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.item-container{
+  margin-top: 50px;
+}
+.item{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: calc(33.333%);
+}
+.iimg{
+    height: 225px;
+    border-radius: 25%;
+    border: 25px solid#ffffff;
+}
+main {
+    color: white;
+}
+.iimg:hover{
+    transform: scale(1.07);
+    transition-duration: 0.35s;
+    box-shadow: 1px 1.5px 2.5px black;
+}
+.item p{
+  color: #ffffff;
+  font-size: 2em;
+}
+/* Drinks page image styling  */
+.drimg{
+    height: 225px;
+    width: 225px;
+    border-radius: 25%;
+}.drimg:hover{
+    transform: scale(1.07);
+    transition-duration: 0.35s;
+    box-shadow: 1px 1.5px 2.5px black;
+}
+/* Navigation bar */
+header img {
+    height: 80px;
+    margin-left: 40px;
+  }
+  header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 15px 0 black;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  header li {
+    margin: 20px;
+  }
+  header li a{
+    color: black;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+    transition: all 0.36s ease;
+  }
+  header li a:hover {
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #3c3a3d;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: small;
+    transform: scale(1.07);
+    transition-duration: 0.28s;
+    box-shadow: 0px 0px 3px;
+  }
+  header * {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  /* Card positioning and alignment */
+  .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .card {
+      display: flex;
+      width: 100%;
+      max-width: 450px; 
+      min-height: 250px;
+      height: auto;
+      border-radius: 15px;
+      background-color: #f8f8f8;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+      justify-content : space-evenly;
+      margin: 8px;
+      background: inherit;
+      backdrop-filter: blur(20px);
+      
+    }
+    .card:hover{
+        box-shadow: 0px 0px 5px  beige;
+    }
+    .card-container1{
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      
+  }
+  .card-container2{
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      margin-top: 10px;
+  }
+  .card-container3{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  .card-container4{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+    .card img {
+      width: 80%;
+      border-radius: 25%;
+      padding-top: 15px;
+      padding-left: 15px;
+    }
+    
+    .card-content {
+      margin-left: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .leftcardcontent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .card-content h3 {
+      font-size: 1rem;
+      margin-bottom: 0px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      color: #ffffff;
+    }
+    
+    .card-content p {
+      margin-bottom: 10px;
+      font-size: 0.85rem;
+      color: #ffffff;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      width: 200px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      flex-direction: column;
+      font-size: 0.75rem;
+      color: #f8f8f8;
+      margin-bottom: 0px;
+      padding-top: 10px;
+      padding-bottom: 11px;
+      padding-left: 17px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .buttondiv{
+      background-color: #0582CA;
+      height: fit-content;
+      width: fit-content;
+      text-align: center;
+      line-height: 35px;
+      border-radius: 25px;
+      color: aliceblue;
+      margin-left: auto;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      border: 1px solid#f8f8f8;
+      padding: 0px 2px;
+      min-width: 80px;
+  }
+  /* =======================================
+   Styles for Terms of use.html
+   ======================================= */
+.terms-content {
+    /* Container styling */
+    max-width: 800px;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.terms-content h2 {
+    /* Header 2 styling */
+    text-align: center;
+    color: #00704A; /* Starbucks Green */
+}
+
+.terms-content h3 {
+    /* Header 3 styling */
+    margin-top: 30px;
+    color: #00704A; /* Starbucks Green */
+}
+
+.terms-content p {
+    /* Paragraph styling */
+    margin-top: 15px;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.terms-content ul {
+    /* List styling */
+    margin-top: 15px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.terms-content li {
+    /* List item styling */
+    margin-bottom: 10px;
+}
+/* =======================================
+   Styles for Cart.html (Matching Menu Page Look)
+   ======================================= */
+
+/* Set body background for cart consistency */
+#cartbody {
+    background-color: #F8F6F4; /* Light background like other menu pages */
+}
+
+/* Cart Item Styling (similar to a product card) */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Similar shadow to menu cards */
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.item-details img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.item-price-quantity {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-width: 250px; /* Ensures consistent alignment for price/counter */
+    justify-content: flex-end;
+}
+
+.cart-item-price {
+    font-weight: 500;
+    color: #00704A; /* Starbucks Green */
+    font-size: 1.05em;
+    min-width: 80px;
+    text-align: right;
+}
+
+.cart-remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.cart-remove-button:hover {
+    background-color: #c0392b;
+}
+
+/* Cart Summary Styling */
+.cart-summary {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border-top: 3px solid #00704A;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+.summary-total {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #00704A;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.checkout-button {
+    width: 100%;
+    background-color: #00704A;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+/* ==================================== */
+/* CART PAGE STYLES */
+/* ==================================== */
+
+/* Container for the entire cart layout */
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 30px; /* Space between item list and summary */
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto; /* Centers the container */
+    padding: 20px;
+}
+
+/* -------------------- */
+/* Cart Items List */
+/* -------------------- */
+#cart-items {
+    flex: 2; /* Takes up 2/3 of the space */
+    min-height: 250px; /* Ensures space even when empty */
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ccc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.item-quantity {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.item-price {
+    font-weight: 700;
+    color: #00704A; /* Starbucks Green for price */
+    font-size: 1.1em;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #D32F2F; /* Red color for errors */
+    font-weight: 500;
+    padding: 20px;
+    background-color: #ffebee;
+    border-radius: 4px;
+    border: 1px solid #ffcdd2;
+}
+
+
+/* -------------------- */
+/* Cart Summary */
+/* -------------------- */
+.cart-summary {
+    flex: 1; /* Takes up 1/3 of the space */
+    background-color: #fff;
+    border: 1px solid #00704A; /* Green border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cart-summary h3 {
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.cart-summary hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.cart-summary h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #000;
+    margin-top: 20px;
+}
+
+#total-price {
+    color: #00704A; /* Bold Starbucks Green for total */
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00704A; /* Starbucks Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.checkout-button:hover {
+    background-color: #005f3d; /* Darker green on hover */
+    transform: translateY(-1px);
+}
+
+/* -------------------- */
+/* Responsive Design */
+/* -------------------- */
+@media (max-width: 850px) {
+    .cart-container {
+        flex-direction: column; /* Stack item list and summary vertically */
+        width: 95%;
+    }
+
+    #cart-items {
+        flex: auto; /* Take full width */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cart-summary {
+        flex: auto; /* Take full width */
+        width: 100%;
+    }
+}
+
+.checkout-button:hover {
+    background-color: #005f3e;
+}
+  .button{
+          background-color:#0582CA;
+          border: 1px solid #ffffff;
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          color: aliceblue;
+          border-color: aliceblue;
+          text-align: center;
+          font-size: 0.9em;
+          position: static;
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          transition: transform ease-in-out 0.3s;
+      
+  }
+  .button:hover{
+      /* background-color: #001F54; */
+      transform: rotate(180deg);
+  }
+  /* .buttondiv:hover{
+      background-color: #001F54;
+      transform: scale(1.07);
+      transition-duration: 0.3s;
+  }  */
+    .buttondiv:hover{
+      border: 1px solid#3c3a3d;
+    }
+  #counter-display{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .carousel-container{
+    width: 50%;
+    position: relative;
+    transform: translate(-50%);
+    left: 50%;
+    overflow: hidden;
+    border-radius: 13px;
+    box-shadow: 0px 0px 5px;
+}
+.carousel-inner{
+    width: auto;
+    display:flex;
+    animation: slide 16s infinite; 
+}
+@keyframes slide{
+    0%{
+        transform: translateX(0);
+    }
+    5%{
+        transform: translateX(-100%);
+    }
+    22.5%{
+        transform: translateX(-100%);
+    }
+    28.5%{
+        transform: translateX(-200%);
+    }
+    45%{
+        transform: translateX(-200%);
+    }
+    50%{
+        transform: translateX(-300%);
+    }
+    67.5%{
+        transform: translateX(-300%);
+    }
+    72.5%{
+        transform: translateX(-400%);
+    }
+    90%{
+        transform: translateX(-400%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.carousel-inner img{
+    width: 100%;
+}

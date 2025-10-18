@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f7f7f7; }
+        .starsucks-green { background-color: #00704A; }
+        .starsucks-green-hover:hover { background-color: #00563C; }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-lg rounded-xl shadow-2xl p-8 md:p-10 text-center">
+            
+            {% if is_error %}
+                <svg class="mx-auto h-16 w-16 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h1 class="text-3xl font-bold mt-4 text-red-600">Order Failed</h1>
+                <p class="text-gray-700 mt-4">{{ message }}</p>
+            {% else %}
+                <svg class="mx-auto h-16 w-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h1 class="text-3xl font-bold mt-4 text-green-700">Order Placed!</h1>
+                <p class="text-gray-700 mt-4 text-lg font-semibold">{{ message }}</p>
+                <p class="text-gray-500 mt-2">{{ order_details }}</p>
+            {% endif %}
+
+            <div class="mt-8">
+                <a href="{{ url_for('get_cart') }}" class="inline-block py-2 px-4 starsucks-green text-white font-semibold rounded-lg starsucks-green-hover transition duration-150">
+                    View Cart (or start new order)
+                </a>
+                <a href="index.html" class="inline-block py-2 px-4 ml-3 text-gray-600 hover:text-gray-900 transition duration-150 border border-gray-300 rounded-lg">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

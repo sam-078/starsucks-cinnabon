@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwiches | Starbucks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js"></script>
+</head>
+<body id="sandbody">
+    <header>
+        <img src="https://i.pinimg.com/736x/e8/ae/07/e8ae0724937f93b6139426580960636b.jpg" alt="Logo">
+        <nav class="navig">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Drinks.html">Drinks</a></li>
+                <li><a href="Sandwiches.html">Sandwiches</a></li>
+                <li><a href="Desserts.html">Desserts</a></li>
+                <li><a href="Terms of use.html">Terms Of Use</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="headers">Sandwiches and Wraps</h2>
+
+    <div class="card-container1">
+        <div class="card" id="stscwdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115298_1.webp" alt="Tandoori Soya Chaap Wrap" class="simg">
+                <div class="tags">| MILK | NUT | SOY | WHEAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="stscwh">Tandoori Soya Chaap Wrap: Rs. 357.00</h3>
+                <p id="stscwd">- Soft succulent soya chaap in tandoori marinade, cooked to a juicy perfection. Encased in a spinach wrap with assorted bell peppers in makhni gravy.</p>
+                <div class="buttondiv" id="stscwbdiv">
+                    <button onclick="decrease('stscwbdiv', 'Tandoori Soya Chaap Wrap', 357.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('stscwbdiv', 'Tandoori Soya Chaap Wrap', 357.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="smcmbdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115454_1.webp" alt="Bake In Mushroom Cheese Melt Baguette SW" class="simg">
+                <div class="tags">| MILK | SOY | WHEAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="smcmbh">Bake In Mushroom Cheese Melt Baguette SW: Rs. 472.50</h3>
+                <p id="smcmbd">- Hearty mushrooms topped with melted yellow cheddar cheese in a herbed aioli garnished with chopped parsley served in a freshly baked baguette.</p>
+                <div class="buttondiv" id="smcmbbdiv">
+                    <button onclick="decrease('smcmbbdiv', 'Bake In Mushroom Cheese Melt Baguette SW', 472.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('smcmbbdiv', 'Bake In Mushroom Cheese Melt Baguette SW', 472.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="sbtmcdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100096_1.webp" alt="Basil Tomato Mozarella Cheese SW" class="simg">
+                <div class="tags">| MILK | NUT | SOY | WHEAT | OAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="sbtmch">Basil Tomato Mozarella Cheese SW: Rs. 383.25</h3>
+                <p id="sbtmcd">- Tomato and mozzarella slices on a layer of basil sauce sandwiched in a multigrain bread.</p>
+                <div class="buttondiv" id="sbtmcbdiv">
+                    <button onclick="decrease('sbtmcbdiv', 'Basil Tomato Mozarella Cheese SW', 383.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('sbtmcbdiv', 'Basil Tomato Mozarella Cheese SW', 383.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="spvsdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115452_1.webp" alt="Bake In Pesto Veggie Sourdough SW" class="simg">
+                <div class="tags">| MILK | NUT | WHEAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="spvsh">Bake In Pesto Veggie Sourdough SW: Rs. 430.50</h3>
+                <p id="spvsd">- Sauteed broccoli florets and mushroom slices with chopped aromatic vegetables tossed in a creamy pesto sauce. Served on a toasted sourdough slice.</p>
+                <div class="buttondiv" id="spvsbdiv">
+                    <button onclick="decrease('spvsbdiv', 'Bake In Pesto Veggie Sourdough SW', 430.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('spvsbdiv', 'Bake In Pesto Veggie Sourdough SW', 430.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="scsacpdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/108177.webp" alt="Creamy Spinach and Corn Pocket" class="simg">
+                <div class="tags">| MILK | NUT | SOY | WHEAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="scsacph">Creamy Spinach and Corn Pocket: Rs. 252.00</h3>
+                <p id="scsacpd">- A creamy spinach and corn filling encased in a buttery French-style dough.</p>
+                <div class="buttondiv" id="scsacpbdiv">
+                    <button onclick="decrease('scsacpbdiv', 'Creamy Spinach and Corn Pocket', 252.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('scsacpbdiv', 'Creamy Spinach and Corn Pocket', 252.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="scctdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/104108.webp" alt="Chilli Cheese Toast" class="simg">
+                <div class="tags">| MILK | RYE | SOY | WHEAT | OATS</div>
+            </div>
+            <div class="card-content">
+                <h3 id="sccth">Chilli Cheese Toast: Rs. 362.25</h3>
+                <p id="scctd">- Cheesy and fiery snack on a toasted French-style baguette, topped with red, yellow, and green pepper and chopped green chili.</p>
+                <div class="buttondiv" id="scctbdiv">
+                    <button onclick="decrease('scctbdiv', 'Chilli Cheese Toast', 362.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('scctbdiv', 'Chilli Cheese Toast', 362.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="scpihbdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/113001.webp" alt="Chilli Paneer in Herbed Bun" class="simg">
+                <div class="tags">| MILK | SOY | WHEAT</div>
+            </div>
+            <div class="card-content">
+                <h3 id="scpihbh">Chilli Paneer in Herbed Bun: Rs. 370.50</h3>
+                <p id="scpihbd">- A tangy chili paneer filling topped with sliced cheese in a herbed bun.</p>
+                <div class="buttondiv" id="scpihbbdiv">
+                    <button onclick="decrease('scpihbbdiv', 'Chilli Paneer in Herbed Bun', 370.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('scpihbbdiv', 'Chilli Paneer in Herbed Bun', 370.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Beverages | Starbucks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js"></script>
+</head>
+<body>
+    <header>
+        <img src="https://i.pinimg.com/736x/e8/ae/07/e8ae0724937f93b6139426580960636b.jpg" alt="Logo">
+        <nav class="navig">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Drinks.html">Drinks</a></li>
+                <li><a href="Sandwiches.html">Sandwiches</a></li>
+                <li><a href="Desserts.html">Desserts</a></li>
+                <li><a href="Terms of use.html">Terms Of Use</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="headers">Other Beverages</h2>
+
+    <div class="card-container1">
+        <div class="card" id="obshcdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/112541.webp" alt="Signature Hot Chocolate" class="obimg">
+                <div class="tags">| MILK | COCOA</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obshch">Signature Hot Chocolate: Rs. 267.75</h3>
+                <p id="obshcd">- Four Cocoas and fresh steamed milk with whipped vanilla topping and chocolate powder. A timeless classic made to sweeten your spirits.</p>
+                <div class="buttondiv" id="counter1">
+                    <button onclick="decrease('counter1', 'Signature Hot Chocolate', 267.75)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter1', 'Signature Hot Chocolate', 267.75)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obmdrdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115188.webp" alt="Mango Dragonfruit Refresher" class="obimg">
+                <div class="tags">| FRUIT | VEGAN</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obmdrh">Mango Dragonfruit Refresher: Rs. 341.25</h3>
+                <p id="obmdrd">- This tropical-inspired pick-me-up - crafted with a clever combination of vibrant lemonade, sweet mango and refreshing dragonfruit flavors hand-shaken with ice plus a scoop of diced dragonfruit.</p>
+                <div class="buttondiv" id="counter2">
+                    <button onclick="decrease('counter2', 'Mango Dragonfruit Refresher', 341.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter2', 'Mango Dragonfruit Refresher', 341.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obcpmldiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/114979.webp" alt="Caramel Pure Matcha Latte" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obcpmlh">Caramel Pure Matcha Latte: Rs. 351.75</h3>
+                <p id="obcpmld">- A delightful blend of smooth caramel, pure matcha, and milk, creating a balanced and flavorful matcha experience.</p>
+                <div class="buttondiv" id="counter3">
+                    <button onclick="decrease('counter3', 'Caramel Pure Matcha Latte', 351.75)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter3', 'Caramel Pure Matcha Latte', 351.75)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obpmldiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/114975.webp" alt="Pure Matcha Latte" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obpmlh">Pure Matcha Latte: Rs. 304.50</h3>
+                <p id="obpmld">- Smooth and creamy pure matcha is lightly sweetened and served with steamed milk.</p>
+                <div class="buttondiv" id="counter4">
+                    <button onclick="decrease('counter4', 'Pure Matcha Latte', 304.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter4', 'Pure Matcha Latte', 304.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obhtdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/104332.webp" alt="Hibiscus Tea" class="obimg">
+            </div>
+            <div class="card-content">
+                <h3 id="obhth">Hibiscus Tea: Rs. 273.00</h3>
+                <p id="obhtd">- Our Hibiscus Tea is a refreshing blend of hibiscus, rosehips, and apple pieces. Served hot or iced.</p>
+                <div class="buttondiv" id="counter5">
+                    <button onclick="decrease('counter5', 'Hibiscus Tea', 273.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter5', 'Hibiscus Tea', 273.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obhbcdir">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/100462.jpg" alt="Hot Brewed Filter Coffee" class="obimg">
+            </div>
+            <div class="card-content">
+                <h3 id="obhbch">Hot Brewed Filter Coffee: Rs. 210.00</h3>
+                <p id="obhbcd">- A smooth and satisfying coffee experience.</p>
+                <div class="buttondiv" id="counter6">
+                    <button onclick="decrease('counter6', 'Hot Brewed Filter Coffee', 210.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter6', 'Hot Brewed Filter Coffee', 210.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obhtdiv2">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100405.webp" alt="Hot Tea" class="obimg">
+            </div>
+            <div class="card-content">
+                <h3 id="obhth2">Hot Tea: Rs. 210.00</h3>
+                <p id="obhtd2">- An exquisite selection of black, green, and herbal teas. Ask your barista for our current offerings.</p>
+                <div class="buttondiv" id="counter7">
+                    <button onclick="decrease('counter7', 'Hot Tea', 210.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter7', 'Hot Tea', 210.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obvsccbdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/112555.webp" alt="Vanilla Sweet Cream Cold Brew" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obvsccbh">Vanilla Sweet Cream Cold Brew: Rs. 341.25</h3>
+                <p id="obvsccbd">- Our slow steeped Cold brew shaken with milk and vanilla sweet cream to strike the perfect balance of coffee and sweetness.</p>
+                <div class="buttondiv" id="counter8">
+                    <button onclick="decrease('counter8', 'Vanilla Sweet Cream Cold Brew', 341.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter8', 'Vanilla Sweet Cream Cold Brew', 341.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="obwmccbdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/112554.webp" alt="White Mocha Cream Cold Brew" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obwmccbh">White Mocha Cream Cold Brew: Rs. 341.25</h3>
+                <p id="obwmccbd">- Our slow steeped Cold brew shaken with milk and white chocolate to strike the perfect balance of coffee and sweetness.</p>
+                <div class="buttondiv" id="counter9">
+                    <button onclick="decrease('counter9', 'White Mocha Cream Cold Brew', 341.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter9', 'White Mocha Cream Cold Brew', 341.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+         <div class="card" id="obctldiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100367.webp" alt="Chai Tea Latte" class="obimg">
+                <div class="tags">| MILK</div>
+            </div>
+            <div class="card-content">
+                <h3 id="obctlh">Chai Tea Latte: Rs. 299.25</h3>
+                <p id="obctld">- Black tea infused with cinnamon, clove, and other warming spices are combined with milk for the perfect balance of sweet and spicy.</p>
+                <div class="buttondiv" id="counter10">
+                    <button onclick="decrease('counter10', 'Chai Tea Latte', 299.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('counter10', 'Chai Tea Latte', 299.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+</body>
+</html>

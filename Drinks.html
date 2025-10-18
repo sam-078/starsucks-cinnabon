@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks | Starsucks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // NOTE: Replace 'http://127.0.0.1:5000' with your actual server address when deploying
+        const BACKEND_URL_ROOT = 'http://127.0.0.1:5500'; 
+
+        /**
+         * Sends cart update information to the Python backend.
+         */
+        function updateCart(itemName, price, quantity) {
+            fetch(`${BACKEND_URL_ROOT}/add_to_cart`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: itemName,
+                    price: price,
+                    quantity: quantity
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Cart Update Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error updating cart:', error);
+                // In a real application, you might show a user-friendly error here.
+            });
+        }
+
+        function increase(counterId, itemName, price) {
+            const counterDisplay = document.querySelector(`#${counterId} .counter-display`);
+            let counter = parseInt(counterDisplay.innerText);
+            counter += 1;
+            counterDisplay.innerText = counter;
+            
+            // **New:** Call the function to update the backend
+            updateCart(itemName, price, counter);
+        }
+
+        function decrease(counterId, itemName, price) {
+            const counterDisplay = document.querySelector(`#${counterId} .counter-display`);
+            let counter = parseInt(counterDisplay.innerText);
+            
+            if (counter > 0) {
+                counter -= 1;
+                counterDisplay.innerText = counter;
+                
+                // **New:** Call the function to update the backend
+                updateCart(itemName, price, counter);
+            }
+        }
+    </script>
+</head>
+<body id="drinkbody">
+    <header>
+        <img src="https://i.pinimg.com/736x/e8/ae/07/e8ae0724937f93b6139426580960636b.jpg" alt="Logo">
+        <nav class="navig">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Drinks.html">Drinks</a></li>
+                <li><a href="Sandwiches.html">Sandwiches</a></li>
+                <li><a href="Desserts.html">Desserts</a></li>
+                <li><a href="Terms of use.html">Terms Of Use</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="headers">Drinks</h2>
+
+    <div class="card-container1">
+        
+        <div class="card" id="shcdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100062.webp" alt="Hot Chocolate" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="dhch">Signature Hot Chocolate: Rs. 351.75</h3>
+                <p id="dhcd">- Chocolate sauce and vanilla syrup are combined with steamed milk, topped with sweetened whipped cream.</p>
+                <div class="buttondiv" id="dcounter1">
+                    <button onclick="decrease('dcounter1', 'Signature Hot Chocolate', 351.75)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter1', 'Signature Hot Chocolate', 351.75)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="capdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100004.webp" alt="Cappuccino" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="dcph">Cappuccino: Rs. 336.00</h3>
+                <p id="dccd">- Dark, rich espresso lies in wait under a smoothed and stretched layer of thick milk foam.</p>
+                <div class="buttondiv" id="dcounter2">
+                    <button onclick="decrease('dcounter2', 'Cappuccino', 336.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter2', 'Cappuccino', 336.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="latdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100005.webp" alt="Latte" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="dlh">Latte: Rs. 336.00</h3>
+                <p id="dlcd">- Our dark, rich espresso balanced with steamed milk and a light layer of foam. A perfect milk forward warm-up.</p>
+                <div class="buttondiv" id="dcounter3">
+                    <button onclick="decrease('dcounter3', 'Latte', 336.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter3', 'Latte', 336.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="amdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100002.webp" alt="Americano" class="obimg">
+                <div class="tags">| NO ALLERGENS |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="dah">Americano: Rs. 304.50</h3>
+                <p id="dacd">- Our dark, rich espresso is combined with hot water to create a wonderfully rich cup with depth and nuance.</p>
+                <div class="buttondiv" id="dcounter4">
+                    <button onclick="decrease('dcounter4', 'Americano', 304.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter4', 'Americano', 304.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="esdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100001.webp" alt="Espresso" class="obimg">
+                <div class="tags">| NO ALLERGENS |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="deph">Espresso: Rs. 262.50</h3>
+                <p id="depd">- Our smooth signature Espresso Roast with rich flavour and a caramelly sweetness.</p>
+                <div class="buttondiv" id="dcounter5">
+                    <button onclick="decrease('dcounter5', 'Espresso', 262.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter5', 'Espresso', 262.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="vscdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100011.webp" alt="Cold Brew" class="obimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="dvsch">Vanilla Sweet Cream Cold Brew: Rs. 399.00</h3>
+                <p id="dvscd">- Vanilla sweet cream floats on top of our signature Cold Brew, making a smooth, perfectly balanced sip.</p>
+                <div class="buttondiv" id="dcounter6">
+                    <button onclick="decrease('dcounter6', 'Vanilla Sweet Cream Cold Brew', 399.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('dcounter6', 'Vanilla Sweet Cream Cold Brew', 399.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

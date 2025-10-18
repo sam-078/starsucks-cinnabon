@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | Starsucks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Specific Cart Styles based on the provided style.css */
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        #cart-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            min-height: 400px; 
+        }
+        
+        .starsucks-green {
+            background-color: #00704A; /* Starbucks Green */
+        }
+        .starsucks-green-hover:hover {
+            background-color: #00563C;
+        }
+
+        #cart-items-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; 
+        }
+
+        #cart-items-table th, #cart-items-table td {
+            text-align: left;
+            padding: 15px;
+        }
+
+        #cart-items-table th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+            color: #555;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .cart-item-row {
+            background-color: #ffffff;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .cart-item-row:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-box {
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 1.1rem;
+        }
+        
+        .total-row {
+            font-weight: 700;
+            font-size: 1.4rem;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-btn {
+            background: #e0e0e0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 5px;
+            transition: background 0.1s;
+        }
+        
+        .quantity-btn:hover {
+            background: #d0d0d0;
+        }
+        
+        .quantity-display {
+            width: 25px;
+            text-align: center;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-btn {
+            color: #aaa;
+            position: absolute; 
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .empty-message {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body onload="loadCart()">
+    <header>
+        <img src="https://i.pinimg.com/736x/e8/ae/07/e8ae0724937f93b6139426580960636b.jpg" alt="Logo">
+        <nav class="navig">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Drinks.html">Drinks</a></li>
+                <li><a href="Sandwiches.html">Sandwiches</a></li>
+                <li><a href="Desserts.html">Desserts</a></li>
+                <li><a href="Terms of use.html">Terms Of Use</a></li>
+                <li><a href="shopping.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="cart-container">
+        <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Your Starsucks Cart</h1>
+        
+        <div id="loading-indicator" class="text-center p-8 text-xl text-gray-600" style="display: none;">
+            Loading cart...
+        </div>
+
+        <div id="empty-cart-message" class="empty-message" style="display: none;">
+            Your cart is empty. Add some delicious items!
+        </div>
+
+        <table id="cart-items-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th class="text-lg">Item</th>
+                    <th class="text-lg">Price</th>
+                    <th class="text-lg">Quantity</th>
+                    <th class="text-lg">Total</th>
+                    <th class="text-lg"></th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body">
+                <!-- Cart items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        
+        <div id="summary-container" class="summary-box" style="display: none;">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="subtotal" class="font-medium">Rs. 0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (18%):</span>
+                <span id="tax" class="font-medium">Rs. 0.00</span>
+            </div>
+            <div class="summary-row total-row">
+                <span>Grand Total:</span>
+                <span id="total-price" class="text-starsucks-green">Rs. 0.00</span>
+            </div>
+
+            <div class="flex justify-between mt-8 space-x-4">
+                <button 
+                    onclick="clearCart()" 
+                    class="w-full py-3 px-6 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-150">
+                    Clear Cart
+                </button>
+                <button 
+                    onclick="placeOrder()" 
+                    class="w-full py-3 px-6 starsucks-green text-white font-semibold rounded-lg shadow-md starsucks-green-hover transition duration-150">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- NOTE: Removed the old Tkinter modal, as we now redirect to Flask checkout_form -->
+
+    <script>
+        // NOTE: The URL must match the route in app.py (e.g., http://127.0.0.1:5500)
+        const BACKEND_URL_ROOT = 'http://127.0.0.1:5500';
+        const TAX_RATE = 0.18; // 18% Tax
+
+        const cartTableBody = document.getElementById('cart-table-body');
+        const emptyMessage = document.getElementById('empty-cart-message');
+        const summaryContainer = document.getElementById('summary-container');
+        const cartTable = document.getElementById('cart-items-table');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        /**
+         * Generic function to send a POST request to update an item's quantity on the backend.
+         */
+        async function updateCartItem(itemName, price, quantity) {
+            try {
+                const response = await fetch(`${BACKEND_URL_ROOT}/add_to_cart`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: itemName,
+                        price: price,
+                        quantity: quantity
+                    }),
+                });
+                if (!response.ok) {
+                    throw new Error(`Server returned status: ${response.status}`);
+                }
+                // Reload the cart to reflect changes
+                window.loadCart(); 
+            } catch (error) {
+                console.error('Error updating cart item:', error);
+            }
+        }
+        
+        window.increaseQuantity = (itemName, price, currentQuantity) => {
+            const newQuantity = currentQuantity + 1;
+            updateCartItem(itemName, price, newQuantity);
+        };
+        
+        window.decreaseQuantity = (itemName, price, currentQuantity) => {
+            const newQuantity = currentQuantity - 1; 
+            if (newQuantity >= 0) {
+                updateCartItem(itemName, price, newQuantity);
+            }
+        };
+
+        function renderCart(cartData) {
+            cartTableBody.innerHTML = ''; 
+            let subtotal = 0;
+
+            if (!cartData || cartData.length === 0) {
+                emptyMessage.style.display = 'block';
+                cartTable.style.display = 'none';
+                summaryContainer.style.display = 'none';
+                return;
+            }
+
+            emptyMessage.style.display = 'none';
+            cartTable.style.display = 'table';
+            summaryContainer.style.display = 'block';
+
+            cartData.forEach(item => {
+                const price = parseFloat(item.price);
+                const quantity = parseInt(item.quantity);
+                const itemName = item.name;
+
+                if (isNaN(price) || isNaN(quantity) || quantity <= 0) {
+                    return; 
+                }
+
+                const itemTotal = price * quantity;
+                subtotal += itemTotal;
+
+                const row = cartTableBody.insertRow();
+                row.className = 'cart-item-row';
+                
+                row.insertCell().innerHTML = `<span class="font-medium">${itemName}</span>`;
+                row.insertCell().innerText = `Rs. ${price.toFixed(2)}`;
+                
+                // Escape item name for use in function call strings
+                const escapedItemName = itemName.replace(/'/g, "\\'");
+                row.insertCell().innerHTML = `
+                    <div class="quantity-controls">
+                        <button onclick="decreaseQuantity('${escapedItemName}', ${price}, ${quantity})" class="quantity-btn">-</button>
+                        <span class="quantity-display">${quantity}</span>
+                        <button onclick="increaseQuantity('${escapedItemName}', ${price}, ${quantity})" class="quantity-btn">+</button>
+                    </div>
+                `;
+                
+                row.insertCell().innerHTML = `<span class="font-semibold text-gray-700">Rs. ${itemTotal.toFixed(2)}</span>`;
+                
+                row.insertCell().innerHTML = `
+                    <button onclick="updateCartItem('${escapedItemName}', ${price}, 0)" class="text-red-500 hover:text-red-700 transition duration-150 font-medium text-sm">Remove</button>
+                `;
+            });
+
+            const taxAmount = subtotal * TAX_RATE;
+            const grandTotal = subtotal + taxAmount;
+            
+            updateSummary(subtotal, taxAmount, grandTotal);
+        }
+
+        function updateSummary(subtotal, taxAmount, grandTotal) {
+            document.getElementById('subtotal').innerText = `Rs. ${subtotal.toFixed(2)}`;
+            document.getElementById('tax').innerText = `Rs. ${taxAmount.toFixed(2)}`;
+            document.getElementById('total-price').innerText = `Rs. ${grandTotal.toFixed(2)}`;
+        }
+        
+        window.loadCart = async () => {
+            loadingIndicator.style.display = 'block';
+            cartTable.style.display = 'none';
+            summaryContainer.style.display = 'none';
+            emptyMessage.style.display = 'none';
+            
+            try {
+                const response = await fetch(`${BACKEND_URL_ROOT}/get_cart`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const cartData = await response.json();
+                renderCart(cartData);
+            } catch (error) {
+                console.error("Failed to load cart data:", error);
+                renderCart([]); 
+            } finally {
+                loadingIndicator.style.display = 'none';
+            }
+        };
+
+        window.clearCart = async () => {
+             // Replaced confirm() with a custom message/modal in a real app, but using window.confirm for simplicity here.
+            if (!window.confirm("Are you sure you want to clear your cart?")) return;
+            
+            try {
+                const response = await fetch(`${BACKEND_URL_ROOT}/clear_cart`, { method: 'POST' });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                console.log("Cart cleared via web command.");
+                window.loadCart();
+            } catch (error) {
+                console.error("Error clearing cart:", error);
+                window.loadCart(); 
+            }
+        };
+        
+        // This function now redirects the user to the Flask-hosted form
+        window.placeOrder = () => {
+            if (cartTableBody.children.length === 0) {
+                document.getElementById('empty-cart-message').style.display = 'block';
+                return;
+            }
+            
+            // Redirect to the Flask route that renders the checkout form
+            window.location.href = `${BACKEND_URL_ROOT}/checkout_form`;
+        };
+    </script>
+</body>
+</html>

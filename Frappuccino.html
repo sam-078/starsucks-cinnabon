@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frappuccino | Starbucks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js"></script>
+</head>
+<body id="frapbody">
+    <header>
+        <img src="https://i.pinimg.com/736x/e8/ae/07/e8ae0724937f93b6139426580960636b.jpg" alt="Logo">
+        <nav class="navig">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Drinks.html">Drinks</a></li>
+                <li><a href="Sandwiches.html">Sandwiches</a></li>
+                <li><a href="Desserts.html">Desserts</a></li>
+                <li><a href="Terms of use.html">Terms Of Use</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="headers">Frappuccino® Blended Beverages</h2>
+
+<div class="card-container1">
+        <div class="card" id="fjcfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/100501.webp" alt="Java Chip Frappuccino" class="fimg">
+                <div class="tags">| MILK | NUTS | SOY</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fjcfh">Java Chip Frappuccino: Rs. 362.25</h3>
+                <p id="fjcfd">- Mocha sauce and Frappuccino® chips blended with Frappuccino® roast coffee, milk, and ice, then topped with whipped vanilla topping and mocha drizzle to bring you endless java joy.</p>
+                <div class="buttondiv" id="fjcfbdiv">
+                    <button onclick="decrease('fjcfbdiv', 'Java Chip Frappuccino', 362.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fjcfbdiv', 'Java Chip Frappuccino', 362.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fmccfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/100465.jpg" alt="Mocha Frappuccino" class="fimg">
+                <div class="tags">| MILK</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fmccfh">Mocha Frappuccino: Rs. 409.50</h3>
+                <p id="fmccfd">- Coffee with rich mocha flavored sauce blended with milk and ice. Topped with whipped vanilla topping.</p>
+                <div class="buttondiv" id="fmccfbdiv">
+                    <button onclick="decrease('fmccfbdiv', 'Mocha Frappuccino', 409.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fmccfbdiv', 'Mocha Frappuccino', 409.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fdmcfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/100466.jpg" alt="Dark Mocha Frappuccino" class="fimg">
+                <div class="tags">| MILK</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fdmcfh">Dark Mocha Frappuccino: Rs. 420.00</h3>
+                <p id="fdmcfd">- Coffee with rich dark mocha flavored sauce blended with milk and ice. Topped with whipped vanilla topping.</p>
+                <div class="buttondiv" id="fdmcfbdiv">
+                    <button onclick="decrease('fdmcfbdiv', 'Dark Mocha Frappuccino', 420.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fdmcfbdiv', 'Dark Mocha Frappuccino', 420.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fcbccfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115024.webp" alt="Cold Brew Chocolate Cream Frappuccino" class="fimg">
+                <div class="tags">| MILK | SOY</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fcbccfh">Cold Brew Chocolate Cream Frappuccino: Rs. 341.25</h3>
+                <p id="fcbccfd">- Cold brew blended with chocolate flavoured sauce and ice, topped with a thick layer of chocolate cream foam.</p>
+                <div class="buttondiv" id="fcbccfbdiv">
+                    <button onclick="decrease('fcbccfbdiv', 'Cold Brew Chocolate Cream Frappuccino', 341.25)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fcbccfbdiv', 'Cold Brew Chocolate Cream Frappuccino', 341.25)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fedccfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/webP/115025.webp" alt="Espresso Dark Chocolate Chip Frappuccino" class="fimg">
+                <div class="tags">| MILK | SOY</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fedccfh">Espresso Dark Chocolate Chip Frappuccino: Rs. 409.50</h3>
+                <p id="fedccfd">- Dark mocha sauce, espresso, dark chocolate chip, blended with milk and ice. Topped with whipped vanilla topping.</p>
+                <div class="buttondiv" id="fedccfbdiv">
+                    <button onclick="decrease('fedccfbdiv', 'Espresso Dark Chocolate Chip Frappuccino', 409.50)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fedccfbdiv', 'Espresso Dark Chocolate Chip Frappuccino', 409.50)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fgtcfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/100502.jpg" alt="Green Tea Cream Frappuccino" class="fimg">
+                <div class="tags">| MILK |</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fgtcfh">Green Tea Cream Frappuccino: Rs. 372.75</h3>
+                <p id="fgtcfd">- Smooth and creamy matcha is lightly sweetened and served with steamed milk.</p>
+                <div class="buttondiv" id="fgtcfbdiv">
+                    <button onclick="decrease('fgtcfbdiv', 'Green Tea Cream Frappuccino', 372.75)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fgtcfbdiv', 'Green Tea Cream Frappuccino', 372.75)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="fvcfdiv">
+            <div class="leftcardcontent">
+                <img src="https://starbucksstatic.cognizantorderserv.com/Items/Small/100471.jpg" alt="Vanilla Cream Frappuccino" class="fimg">
+                <div class="tags">| MILK</div>
+            </div>
+            <div class="card-content">
+                <h3 id="fvcfh">Vanilla Cream Frappuccino: Rs. 420.00</h3>
+                <p id="fvcfd">- Rich mocha-flavored sauce meets up with chocolaty chips, milk, and ice. Top it off with whipped vanilla topping and mocha drizzle for a real party in your mouth. A coffee-free delight.</p>
+                <div class="buttondiv" id="fvcfbdiv">
+                    <button onclick="decrease('fvcfbdiv', 'Vanilla Cream Frappuccino', 420.00)" class="button">-</button>
+                    <span class="counter-display">0</span>
+                    <button onclick="increase('fvcfbdiv', 'Vanilla Cream Frappuccino', 420.00)" class="button">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
