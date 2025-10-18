@@ -723,3 +723,256 @@ header img {
 .carousel-inner img{
     width: 100%;
 }
+
+/* ==================================== */
+/* NEW STYLES FOR Cart.html */
+/* ==================================== */
+
+/* Main Cart Heading */
+#cart-container h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2.5em; /* Adjusted from text-3xl */
+    text-align: center;
+    margin-bottom: 25px; /* Adjusted from mb-6 */
+    color: #3c3a3d; /* Dark color */
+    padding-top: 10px;
+}
+
+/* Empty Cart Message */
+.empty-message {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2em;
+    color: #666;
+    background-color: #fff;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+/* Loading Indicator */
+#loading-indicator {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2em;
+    color: #0582CA;
+}
+
+/* Cart Table Styling */
+#cart-items-table {
+    width: 100%;
+    border-collapse: separate; /* Use separate to allow border-radius */
+    border-spacing: 0 10px; /* Space between rows */
+    font-family: "Poppins", sans-serif;
+}
+
+#cart-items-table thead th {
+    background-color: #0582CA; /* Blue header background */
+    color: aliceblue;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1em; /* Adjusted from text-lg */
+    border-bottom: 2px solid #00704A; /* Green line below header */
+}
+
+#cart-items-table thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+#cart-items-table thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Cart Row Styling */
+#cart-table-body tr {
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for row separation */
+    transition: transform 0.2s;
+}
+
+#cart-table-body tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#cart-table-body td {
+    padding: 15px;
+    vertical-align: middle;
+    color: #333;
+}
+
+#cart-table-body td:nth-child(2),
+#cart-table-body td:nth-child(4) {
+    text-align: right; /* Price and total alignment */
+    font-weight: 500;
+    color: #00704A; /* Starbucks Green for financial values */
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.quantity-btn {
+    background-color: #0582CA; /* Blue button */
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #005f3d; /* Darker green on hover for better contrast */
+}
+
+.quantity-display {
+    font-weight: 500;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Remove Button */
+.text-red-500 {
+    color: #D32F2F; /* Primary red color */
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.text-red-500:hover {
+    color: #b71c1c; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* Summary Box */
+.summary-box {
+    background-color: #fff;
+    border: 2px solid #00704A; /* Stronger green border */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.summary-row span:last-child {
+    font-weight: 500; /* Adjusted from font-medium */
+    color: #333;
+}
+
+.total-row {
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    margin-top: 15px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.text-starsucks-green {
+    color: #00704A; /* Starbucks Green */
+    font-weight: 700 !important;
+}
+
+/* Action Buttons (Clear and Checkout) */
+#summary-container .flex.justify-between.mt-8.space-x-4 {
+    display: flex;
+    margin-top: 30px; /* Adjusted from mt-8 */
+    gap: 20px; /* Adjusted from space-x-4 */
+}
+
+#summary-container button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 8px; /* Adjusted from rounded-lg */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+/* Clear Cart Button */
+#summary-container .bg-red-500 {
+    background-color: #D32F2F; /* Red for destructive action */
+}
+
+#summary-container .hover\:bg-red-600:hover {
+    background-color: #b71c1c;
+    transform: translateY(-1px);
+}
+
+/* Proceed to Checkout Button */
+#summary-container .starsucks-green {
+    background-color: #00704A; /* Starbucks Green for primary action */
+}
+
+#summary-container .starsucks-green-hover:hover {
+    background-color: #005f3d;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    #cart-items-table thead {
+        display: none; /* Hide header on small screens */
+    }
+
+    #cart-items-table tr {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    #cart-items-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 15px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #cart-items-table td:before {
+        content: attr(data-label); /* Use data-label for mobile view */
+        font-weight: 600;
+        color: #666;
+    }
+    
+    #cart-items-table td:nth-child(1):before { content: "Item:"; }
+    #cart-items-table td:nth-child(2):before { content: "Price:"; }
+    #cart-items-table td:nth-child(3):before { content: "Quantity:"; }
+    #cart-items-table td:nth-child(4):before { content: "Total:"; }
+    #cart-items-table td:nth-child(5) { 
+        text-align: right;
+        justify-content: flex-end;
+        border-bottom: none;
+    }
+    
+    .quantity-controls {
+        justify-content: flex-end;
+    }
+    
+    #summary-container .flex.justify-between.mt-8.space-x-4 {
+        flex-direction: column;
+    }
+    
+    #summary-container button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
